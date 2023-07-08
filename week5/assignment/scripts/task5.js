@@ -11,7 +11,6 @@ let curDay;
 // Step 3: Using the variable declared in Step 1, assign the value of the variable declared in Step 2 to the day of the week ( hint: getDay() )
 curDate = new Date();
 curDay = curDate.getDay();
-console.log(curDay);
 
 // Step 4: Declare a variable to hold a message that will be displayed
 let msgToDisplay1;
@@ -119,10 +118,10 @@ function output(oneArray){
 const url = "https://byui-cse.github.io/cse121b-course/week05/temples.json";
 
 async function getTemples(url){
+    //Covered step 3, 4, 5 and 6
     const response = await fetch(url);
     if(response.ok){
         globArray = await response.json();
-        console.log(globArray);
     }
     output(globArray);
 }
@@ -130,13 +129,27 @@ async function getTemples(url){
 getTemples(url);
 
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
+function reset(){
+    //Taking advantage of CSS Path, note that XPATH won't work I select all the article elements under temples div
+    //Each of them is removed
+    document.querySelectorAll("#temples > article").forEach(ele => ele.remove());
+
+}
+
+
 
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
+function sortBy(){
+    reset();
+}
 
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
+document.querySelector("#sortBy").addEventListener("click", function () {
+    sortBy();
+});
 
 /* STRETCH */
 
