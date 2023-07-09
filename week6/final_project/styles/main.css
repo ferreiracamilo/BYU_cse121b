@@ -16,8 +16,8 @@ footer {
     background-color: gray;
     color: white;
     padding: 5px;
-    text-align: center;
-
+    justify-content:center;
+    align-items:center;
     padding: 25px 50px;
     margin: 100px 0 0 0;
     display: flex;
