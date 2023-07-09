@@ -17,6 +17,10 @@ footer {
     color: white;
     padding: 5px;
     text-align: center;
+
+    padding: 25px 50px;
+    margin: 100px 0 0 0;
+    display: flex;
 }
 
 #players button{
@@ -108,9 +112,43 @@ section {
     vertical-align: top;
 }
 
-#players {
+/* PLAYERS */
+.grid-players{
+    margin-top: 20px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4em;
+}
+
+/*#region player card*/
+.player-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.player-card h1,p{
+    color: var(--accent2-color);
+}
+
+.player-card p{
+    text-align: center;
+}
+
+.player-card .playerimg img{
+    width: 200px;
+    height: 200px;
+}
+
+.player-card .playerimg img{
+    width: 200px;
+    height: 200px;
+}
+
+.player-card .countryflag img{
+    width: 30;
+    height: 20px;
 }
 
 /* Media Queries */
