@@ -32,14 +32,6 @@ header {
     text-align: center;
 }
 
-/*
-
-img {
-    width: 80%;
-}
-
-*/
-
 label {
     display: inline-block;
     min-width: 120px;
@@ -129,18 +121,8 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.player-card .playerimg img{
-    width: 200px;
-    height: 200px;
-}
-
-.player-card .playerimg img{
-    width: 200px;
-    height: 200px;
-}
-
 .player-card .countryflag img{
-    width: 30;
+    width: 30px;
     height: 20px;
 }
 
