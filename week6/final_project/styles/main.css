@@ -19,14 +19,22 @@ footer {
     text-align: center;
 }
 
+#players button{
+    display: inline-flex;
+}
+
 header {
     margin: auto;
     text-align: center;
 }
 
+/*
+
 img {
     width: 80%;
 }
+
+*/
 
 label {
     display: inline-block;
@@ -100,7 +108,7 @@ section {
     vertical-align: top;
 }
 
-#temples {
+#players {
     display: grid;
     grid-template-columns: 1fr;
 }
