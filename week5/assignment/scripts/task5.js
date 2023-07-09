@@ -55,7 +55,7 @@ switch(curDay) {
     case 6:
         msgToDisplay2 = "Saturday";
         break;
-  }
+}
 
 
 /* OUTPUT */
