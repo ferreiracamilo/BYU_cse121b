@@ -57,4 +57,4 @@ function checkElements() {
     } catch (error) {
       console.error("Error:", error);
     }
-  })();
+})();
