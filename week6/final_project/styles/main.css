@@ -4,6 +4,7 @@
 *
 ************************************************************/
 
+
 .carousel-container {
     display: flex;
     justify-content: center;
@@ -45,6 +46,15 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
+
+.carousel-item h3{
+
+}
+
+.carousel-item img{
+
+}
+
 
 /************************************************************
 *

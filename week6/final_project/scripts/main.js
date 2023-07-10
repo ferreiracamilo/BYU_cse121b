@@ -3,6 +3,7 @@ const playerCard = document.querySelector('.player-card');
 const sectionCards = document.querySelector('.grid-players');
 const prevButton = document.querySelector('#prevButton');
 const nextButton = document.querySelector('#nextButton');
+const teamname = document.querySelector('#teamname');
 
 let currentIndex = 0;
 let teams = [];
@@ -25,6 +26,8 @@ function showTeam(index) {
 
     // Clear existing player cards
     playerCard.innerHTML = '';
+
+    teamname.textContent = team.name;
 
     // Create player cards for each player
     team.players.forEach(player => {
