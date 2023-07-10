@@ -6,9 +6,11 @@
 
 
 .carousel-container {
-    display: flex;
+    vertical-align: top;
+    text-align: center;
     justify-content: center;
     align-items: center;
+    display: flex;
     height: 200px;
     width: 300px;
     overflow: hidden;
@@ -46,15 +48,6 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
-
-.carousel-item h3{
-
-}
-
-.carousel-item img{
-
-}
-
 
 /************************************************************
 *
@@ -97,13 +90,13 @@
 *
 ************************************************************/
 
-footer {
+footer {    
     background-color: gray;
     color: white;
-    padding: 5px;
     justify-content:center;
-    align-items:center;
     padding: 25px 50px;
-    margin: 100px 0 0 0;
     display: flex;
+    position:absolute;
+    bottom:0;
+    width:100%;
 }
