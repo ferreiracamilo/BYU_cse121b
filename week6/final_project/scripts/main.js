@@ -1,10 +1,6 @@
-const carouselContainer = document.querySelector('.carousel-container');
-const carouselItem = document.querySelector('.carousel-item');
 const teamLogo = document.querySelector('.carousel-item img');
 const playerCard = document.querySelector('.player-card');
-const playerImage = document.querySelector('.player-card img');
-const playerName = document.querySelector('.player-card h3');
-const playerInfo = document.querySelector('.player-card p');
+const sectionCards = document.querySelector('.grid-players');
 const prevButton = document.querySelector('#prevButton');
 const nextButton = document.querySelector('#nextButton');
 
@@ -37,19 +33,26 @@ function showTeam(index) {
 
         const playerImage = document.createElement('img');
         playerImage.src = player.image;
-        playerImage.alt = 'Player Image';
+        playerImage.alt = player.nickname + ' Image';
 
-        const playerName = document.createElement('h3');
-        playerName.textContent = player.name;
+        const playerNickName = document.createElement('h3');
+        playerNickName.textContent = player.nickname;
 
-        const playerInfo = document.createElement('p');
-        playerInfo.textContent = player.info;
+        const playerFullName = document.createElement('p');
+        //Full Name includes nickname, so needs a treatment for removal
+        nickNamePattern = "'"+ player.nickname + "'";
+        cleanFullName = player.fullname.replace(nickNamePattern,"");
+        playerFullName.textContent = "Full name: " + cleanFullName;
+
+        const playerCountry = document.createElement('p');
+        playerCountry.textContent = "Country: " + player.country.name;
 
         card.appendChild(playerImage);
-        card.appendChild(playerName);
-        card.appendChild(playerInfo);
+        card.appendChild(playerNickName);
+        card.appendChild(playerFullName);
+        card.appendChild(playerCountry);
 
-        playerCard.appendChild(card);
+        sectionCards.appendChild(card);
     });
 }
 
