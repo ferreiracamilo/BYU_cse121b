@@ -100,3 +100,44 @@ footer {
     bottom:0;
     width:100%;
 }
+
+/************************************************************
+*
+*               MEDIA QUERIES
+*
+************************************************************/
+
+@media screen and (max-width: 900px) {
+
+    footer {
+        list-style-type: none; padding: 0px; margin: 0px;
+
+        margin: 0 auto;
+        margin-top: 30px;
+        position:relative;
+        bottom:0;
+        width:100%;
+    }
+
+    .grid-players{
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .player-card {
+        margin-bottom: 10%;
+    }
+
+    button{
+        display: block;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .carousel-navigation, .leftArrow, .rightArrow{
+        margin: 0%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
