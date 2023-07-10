@@ -33,7 +33,7 @@ function showTeam(index) {
 
         const playerImage = document.createElement('img');
         playerImage.src = player.image;
-        playerImage.alt = player.nickname + ' Image';
+        playerImage.alt = player.nickname + ' Profile Image';
 
         const playerNickName = document.createElement('h3');
         playerNickName.textContent = player.nickname;
@@ -47,10 +47,16 @@ function showTeam(index) {
         const playerCountry = document.createElement('p');
         playerCountry.textContent = "Country: " + player.country.name;
 
+        const countryImage = document.createElement('img');
+        countryImage.classList.add('countryflag');
+        countryImage.src = player.country.flag;
+        countryImage.alt = player.nickname + ' Country Flag Image';
+
         card.appendChild(playerImage);
         card.appendChild(playerNickName);
         card.appendChild(playerFullName);
         card.appendChild(playerCountry);
+        card.appendChild(countryImage);
 
         sectionCards.appendChild(card);
     });
