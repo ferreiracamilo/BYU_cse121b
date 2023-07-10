@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Carousel</title>
+    <style>
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .carousel-navigation button {
+            margin: 0 5px;
+        }
+
+        .player-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .player-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-item active">
+            <img src="" alt="Team Logo">
+        </div>
+    </div>
+
+    <div class="player-card">
+        <img src="" alt="Player Image">
+        <h3></h3>
+        <p></p>
+    </div>
+
+    <div class="carousel-navigation">
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+    </div>
+
+    <script>
+        const carouselContainer = document.querySelector('.carousel-container');
+        const carouselItem = document.querySelector('.carousel-item');
+        const teamLogo = document.querySelector('.carousel-item img');
+        const playerCard = document.querySelector('.player-card');
+        const playerImage = document.querySelector('.player-card img');
+        const playerName = document.querySelector('.player-card h3');
+        const playerInfo = document.querySelector('.player-card p');
+        const prevButton = document.querySelector('#prevButton');
+        const nextButton = document.querySelector('#nextButton');
+
+        let currentIndex = 0;
+        let teams = [];
+
+        // Fetch team data from API
+        fetch('https://hltv-api.vercel.app/api/player.json')
+            .then(response => response.json())
+            .then(data => {
+                teams = data;
+                showTeam(currentIndex);
+            })
+            .catch(error => {
+                console.log('Error fetching team data:', error);
+            });
+
+        // Show team data in carousel
+        function showTeam(index) {
+            const team = teams[index];
+            teamLogo.src = team.logo;
+            playerImage.src = team.players[0].image;
+            playerName.textContent = team.players[0].name;
+            playerInfo.textContent = team.players[0].info;
+        }
+
+        // Event listeners for navigation buttons
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + teams.length) % teams.length;
+            showTeam(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % teams.length;
+            showTeam(currentIndex);
+        });
+    </script>
+</body>
+</html>
