@@ -71,7 +71,7 @@
     font-family: arial;
 }
 
-.player-card h1,p{
+.player-card h3,p{
     color: var(--accent2-color);
 }
 
