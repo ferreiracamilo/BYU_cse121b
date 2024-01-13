@@ -1,5 +1,5 @@
 # cse121b
-Repository for BYU Javascript
+Repository for BYU Javascript course CSE121B
 
 #Links to task/final project
 - https://ferreiracamilo.github.io/BYU_cse121b/week2/assignment/task2
